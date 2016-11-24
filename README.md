@@ -13,7 +13,7 @@ iterate over the values without needing to store them.
 As with most other implementations of `linspace` and `logspace`, the
 default number of values generated is 100.
 
-```
+```c++
 // C++ Standard Library
 #include <iostream>
 #include <vector>
