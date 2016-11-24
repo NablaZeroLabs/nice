@@ -5,6 +5,7 @@
 /// @author    J. Arrieta <Juan.Arrieta@nablazerolabs.com>
 /// @date      November 24, 2016
 /// @copyright (c) 2016 Nabla Zero Labs
+/// @license   The MIT License (MIT)
 
 #pragma once
 #ifndef NICE_LINSPACE_HPP_HEADER_GUARDS
