@@ -5,7 +5,7 @@
 # @copyright (c) 2016 Nabla Zero Labs
 # @license   The MIT License (MIT)
 
-CXX = g++
+CXX = clang++
 CXX_FLAGS = -I../include -O2 -march=native -Wall -Wextra -std=c++14
 GTEST_FLAGS = -lgtest -lgtest_main -lpthread
 
