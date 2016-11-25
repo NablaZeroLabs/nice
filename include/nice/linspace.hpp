@@ -15,6 +15,7 @@
 #include <limits>
 #include <iterator>
 
+namespace nzl {
 namespace nice {
 
 template<typename T>
@@ -157,6 +158,7 @@ bool linspace_iterator<T>::same_members(const linspace_iterator<T>& other) const
           (m_n       == other.m_n));
 }
 
-}  // namespace nice
+} // namespace nice
+} // namespace nzl
 
 #endif // NICE_LINSPACE_HPP_HEADER_GUARDS

@@ -18,6 +18,7 @@
 #include <string>
 #include <stdexcept>
 
+namespace nzl {
 namespace nice {
 
 /// @brief Slurp a file into an `std::string`.
@@ -79,5 +80,6 @@ slurp(const std::string& filename)
 }
 
 } // namespace nice
+} // namespace nzl
 
 #endif // NICE_SLURP_HPP_HEADER_GUARDS

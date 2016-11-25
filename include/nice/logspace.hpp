@@ -16,6 +16,7 @@
 #include <limits>
 #include <iterator>
 
+namespace nzl {
 namespace nice {
 
 template<typename T>
@@ -158,6 +159,7 @@ bool logspace_iterator<T>::same_members(const logspace_iterator<T>& other) const
           (m_n       == other.m_n));
 }
 
-}  // namespace nice
+} // namespace nice
+} // namespace nzl
 
 #endif // NICE_LOGSPACE_HPP_HEADER_GUARDS
