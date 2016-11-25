@@ -25,11 +25,25 @@ default number of values generated is 100.
 int main()
 {
   std::cout << "linspace(-1, 5, 7)\n";
-  auto vlin = nice::make_linspace<std::vector<double>>(-1, 5, 7);
+  auto vlin = nzl::nice::make_linspace<std::vector<double>>(-1, 5, 7);
   for (const auto & item : vlin)  std::cout << item << "\n";
 
   std::cout << "logspace(1, 5, 7)\n";
-  auto vlog = nice::make_logspace<std::vector<float>>(1, 5, 7);
+  auto vlog = nzl::nice::make_logspace<std::vector<float>>(1, 5, 7);
   for (const auto & item : vlog) std::cout << item << "\n";
+}
+```
+
+## Using `slurp`
+
+The `slurp` function is used to read an entire file into an `std::string`.
+
+```c++
+#include <nice/slurp.hpp>
+int main(int argc, char* argv[])
+{
+    // [error checking, etc...]
+    auto contents = nzl::nice::slurp(argv[1]);
+    // do something with "contents" (an std::string)
 }
 ```
