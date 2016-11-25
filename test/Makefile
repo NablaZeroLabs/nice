@@ -7,9 +7,10 @@
 
 CXX = g++
 CXX_FLAGS = -I../include -O2 -march=native -Wall -Wextra -std=c++14
+GTEST_FLAGS = -lgtest -lgtest_main -lpthread
 
 test-nice: test-nice.cpp
-	${CXX} -o test-nice test-nice.cpp ${CXX_FLAGS}
+	${CXX} -o test-nice test-nice.cpp ${CXX_FLAGS} ${GTEST_FLAGS}
 
 .PHONY: clean
 

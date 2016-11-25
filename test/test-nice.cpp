@@ -8,37 +8,31 @@
 /// @license   The MIT License (MIT)
 
 // C++ Standard Library
-#include <iostream>
 #include <vector>
 
-// catch Library (a unit test framework)
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+// Google Test Library
+#include <gtest/gtest.h>
 
-// nice Library (included within an anonymous namespace because there
-// are collisions between `nice` and unistd.h in OS X).
-namespace {
+// nice Library
 #include <nice/linspace.hpp>
 #include <nice/logspace.hpp>
 #include <nice/slurp.hpp>
+
+TEST(linspace, defaults_to_100_values) {
+  auto vlin = nzl::nice::make_linspace<std::vector<double>>(-100, 100);
+  EXPECT_EQ(vlin.size(), 100);
+  EXPECT_EQ(vlin.front(), -100);
+  EXPECT_EQ(vlin.back(), 100);
 }
 
-TEST_CASE("linspace defaults to 100 values", "[linspace]") {
-  auto vlin = nice::make_linspace<std::vector<double>>(-100, 100);
-  REQUIRE(vlin.size() == 100);
-  REQUIRE(vlin.front() == -100);
-  REQUIRE(vlin.back() == 100);
+TEST(logspace, defaults_to_100_values) {
+  auto vlog = nzl::nice::make_logspace<std::vector<double>>(0, 5);
+  EXPECT_EQ(vlog.size(), 100);
+  EXPECT_EQ(vlog.front(), 1);
+  EXPECT_EQ(vlog.back(), std::pow(10, 5));
 }
 
-TEST_CASE("logspace defaults to 100 values", "[logspace]") {
-  auto vlog = nice::make_logspace<std::vector<double>>(0, 5);
-  REQUIRE(vlog.size() == 100);
-  REQUIRE(vlog.front() == 1);
-  REQUIRE(vlog.back() == std::pow(10, 5));
+TEST(slurp, can_read_this_file){
+  auto contents = nzl::nice::slurp(__FILE__);
+  EXPECT_GT(contents.size(), 0);
 }
-
-TEST_CASE("slurp can read this file", "[slurp]") {
-  auto contents = nice::slurp(__FILE__);  
-  REQUIRE(contents.size() > 0);
-}
-
